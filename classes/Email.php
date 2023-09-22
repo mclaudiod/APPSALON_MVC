@@ -39,7 +39,7 @@
             
             $content = "<html>";
             $content .= "<p><strong>Hello " . $this->name . ".</strong> </p>";
-            $content .= "<p>You have created an account on AppSalon.com, to confirm it you only have to click on this link: <a href='http://localhost:3000/confirm-account?token=" . $this->token . "'>Confirm Account</a></p>";
+            $content .= "<p>You have created an account on AppSalon.com, to confirm it you only have to click on this link: <a href='https://appsalonphp.000webhostapp.com/confirm-account?token=" . $this->token . "'>Confirm Account</a></p>";
             $content .= "<p>If you didn't create an account in our site then you can safely ignore this email.</p>";
             $content .= "</html>";
             $mail->Body = $content;
@@ -72,7 +72,7 @@
             
             $content = "<html>";
             $content .= "<p><strong>Hello " . $this->name . ".</strong> </p>";
-            $content .= "<p>You have requested a password recovery on AppSalon.com, to recover it you only have to click on this link: <a href='http://localhost:3000/recover?token=" . $this->token . "'>Recover Password</a></p>";
+            $content .= "<p>You have requested a password recovery on AppSalon.com, to recover it you only have to click on this link: <a href='https://appsalonphp.000webhostapp.com/recover?token=" . $this->token . "'>Recover Password</a></p>";
             $content .= "<p>If you didn't ask for a password recovery in our site then you can safely ignore this email.</p>";
             $content .= "</html>";
             $mail->Body = $content;

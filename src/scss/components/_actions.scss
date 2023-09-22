@@ -1,0 +1,23 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.actions {
+    margin-top: 5rem;
+
+    @include m.tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    a {
+        color: v.$white;
+        display: block;
+        margin-bottom: 2.5rem;
+
+        &:hover {
+            color: darken(v.$blue, 10% );
+            cursor: pointer;
+        }
+    }
+}

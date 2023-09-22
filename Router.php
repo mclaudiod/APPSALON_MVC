@@ -6,30 +6,19 @@
         public array $getRoutes = [];
         public array $postRoutes = [];
 
-        public function get($url, $fn)
-        {
+        public function get($url, $fn) {
             $this->getRoutes[$url] = $fn;
         }
 
-        public function post($url, $fn)
-        {
+        public function post($url, $fn) {
             $this->postRoutes[$url] = $fn;
         }
 
-        public function verifyRoutes()
-        {
-            
-            // Protect Routes...
+        public function verifyRoutes() {
 
             session_start();
 
-            // Protected routes array...
-
-            // $protected_routes = ["/admin", "/properties/create", "/properties/update", "/properties/delete", "/agents/create", "/agents/update", "/agents/delete", "/entries/create", "/entries/update", "/entries/delete"];
-
-            // $auth = $_SESSION['login'] ?? null;
-
-            $currentUrl = $_SERVER['REQUEST_URI'] === "" ? '/' : $_SERVER['REQUEST_URI'];
+            $currentUrl = isset($_SERVER['PATH_INFO']) ? str_replace("/public_html", "", $_SERVER['PATH_INFO']) : '/';
             $method = $_SERVER['REQUEST_METHOD'];
 
             if ($method === 'GET') {
@@ -49,8 +38,7 @@
             }
         }
 
-        public function render($view, $data = [])
-        {
+        public function render($view, $data = []) {
 
             // Read what we are sending to the view
 
