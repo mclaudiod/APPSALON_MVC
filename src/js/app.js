@@ -119,7 +119,7 @@ async function queryAPI() {
     // .json is used because inside the information from the URL that is where the information is stored, more precisely in prototype and then json
 
     try {
-        const url = "http://localhost:3000/api/services";
+        const url = "https://appsalonphp.000webhostapp.com/api/services";
         const result = await fetch(url);
         const services = await result.json();
         showServices(services);
@@ -347,7 +347,7 @@ async function reserveAppointment() {
     try {
         // Petition to the API
 
-        const url = "http://localhost:3000/api/appointments";
+        const url = "https://appsalonphp.000webhostapp.com/api/appointments";
 
         const answer = await fetch(url, {
             method: "POST",
